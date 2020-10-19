@@ -1,0 +1,78 @@
+{
+    "Constants": 
+    [
+        {
+            "Constant":
+            {
+                "Problem1":
+                {
+                    "Infinity": 1000,
+                    "tmin":-4,
+                    "tmax":4,
+                    "tinc":0.1,
+                    "V": 5,
+                    "omega": "2*pi",
+                    "ymax":7,
+                    "ymin":-7
+                },
+                "Problem2":
+                {
+                    "Infinity": 1000,
+                    "tmin":-4,
+                    "tmax":4,
+                    "tinc":0.1,
+                    "ymax":20,
+                    "ymin":-2,
+                    "FundamentalPeriod":5,
+                    "Omega0":"2*pi"
+                },
+                "Problem3":
+                {
+                    "tmin":-10,
+                    "tmax":10,
+                    "tinc":0.1,
+                    "ymax":10,
+                    "ymin":-10,
+                    "V":5,
+                    "t0":0,
+                    "T":2
+                },
+                "Problem4":
+                {
+                    "tmin":-6,
+                    "tmax":6,
+                    "tinc":0.1,
+                    "ymax":6,
+                    "ymin":-1,
+                    "V":5,
+                    "t0":0,
+                    "T":2
+                },
+                "Problem5":
+                {
+                    "tmin":-6,
+                    "tmax":6,
+                    "tinc":0.1,
+                    "ymax":6,
+                    "ymin":-1,
+                    "V":5,
+                    "t0":0,
+                    "T":2,
+                    "TimeScalingFactor": 5
+                }
+            }
+        }
+    ],
+    "Paths": [
+        { "Path": "./src" },
+        { "Path": "./src/Prob1" },
+        { "Path": "./src/Prob2" },
+        { "Path": "./src/Prob3" },
+        { "Path": "./src/Prob4" },
+        { "Path": "./src/Prob5" },
+        { "Path": "./src/functions" }
+    ],
+    "Save": [{
+        }
+    ]
+}
