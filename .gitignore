@@ -1,2 +1,5 @@
 *.code-workspace
 debug.log
+*.log
+*.net
+*.raw
