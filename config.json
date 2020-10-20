@@ -27,7 +27,8 @@
         }
     ],
     "Paths": [
-        { "Path": "./src" }
+        { "Path": "./src" },
+        {"Path":"./res"}    
     ],
     "Save": [{}]
 }
