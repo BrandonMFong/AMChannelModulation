@@ -9,7 +9,7 @@ subplot(2,2,1);
 plot(f,fftshift(abs(X)));
 xlabel('Frequency / Sample Frequency');
 ylabel('Fourier Magnitude');
-title('X');
+title('2.1 X');
 
 % a
 soundsc(x,8000)
@@ -60,3 +60,23 @@ soundsc(x5,8000)
 
 % 2.3
 
+load proj2_wave2 
+x = double(x)/32768;
+X = fft(x);
+n = (length(X)-1)/2;
+f = (-n:n)/n/2;
+figure
+subplot(2,2,1);
+plot(f,fftshift(abs(X)));
+xlabel('Frequency / Sample Frequency');
+ylabel('Fourier Magnitude');
+title('2.3 X');
+
+% a
+% Channel one: 0.20
+% Channel two: 0.40
+% b
+y1=exp(2i*pi*0.2*(1:length(x))).*x;
+subplot(2,2,2);
+plot(f,fftshift(abs(y1)));
+title('2.3.b');
