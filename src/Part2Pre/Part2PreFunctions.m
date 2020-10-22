@@ -12,7 +12,7 @@ ylabel('Fourier Magnitude');
 title('2.1 X');
 
 % a
-soundsc(x,8000)
+%soundsc(x,8000)
 
 % b
 % 
@@ -27,6 +27,7 @@ title('2.1.b');
 % c
 % slight difference in amplitude compared to b
 x2=real(exp(2i*pi*0.2*(1:length(x))).*x);
+% soundsc(x2,8000)
 X2 = fft(x2);
 n = (length(X2) - 1)/2;
 f = (-n:n)/n/2;
@@ -42,7 +43,7 @@ f = (-n:n)/n/2;
 subplot(2,2,4);
 plot(f,fftshift(abs(X3)));
 title('2.1.d');
-soundsc(x3,8000)
+% soundsc(x3,8000)
 
 % 2.2
 
@@ -64,11 +65,12 @@ soundsc(x4,8000)
 
 % c 
 x5=filter(h,1,x4);
-X5 = fft(x5);
+X5 = fft(x5)./0.4; % why divide by 0.4?  This was achieve by seeing the omega variable 
 n = (length(X5) - 1)/2;
 f = (-n:n)/n/2;
 % figure
 subplot(2,2,2);
 plot(f,fftshift(abs(X5)));
 title('2.2.c');
-soundsc(x5,8000)
+% soundsc(x5,8000)
+
