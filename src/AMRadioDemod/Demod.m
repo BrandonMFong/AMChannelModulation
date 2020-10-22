@@ -50,22 +50,24 @@ figure
 DemodFilter=fir1(40,0.2);
 % c
 DemodCh1 = cos(2*pi*0.2*(1:length(channel1))).*channel1; % Demodulate with cos()
-DMY1 = fft(filter(DemodFilter,1,DemodCh1))./2;
+FilteredCh2 = filter(DemodFilter,1,DemodCh1); % Put channel through low pass filter 
+DMY1 = fft(FilteredCh2)./2;
 n = (length(DMY1)-1)/2;
 f = (-n:n)/n/2;
 subplot(1,2,1);
 plot(f,fftshift(abs(DMY1)));
 title('2.3.c Channel 1 Demodulated (y1)');
-% soundsc(real(DemodCh1(1:8:end)),8000);
+soundsc(real(FilteredCh2(1:8:end)),8000);
 
 DemodCh2 = cos(2*pi*0.4*(1:length(channel2))).*channel2; % Demodulate with cos()
-DMY2 = fft(filter(DemodFilter,1,DemodCh2))./2;
+FilteredCh2 = filter(DemodFilter,1,DemodCh2); % Put channel through low pass filter 
+DMY2 = fft(FilteredCh2)./2;
 n = (length(DMY2)-1)/2;
 f = (-n:n)/n/2;
 subplot(1,2,2);
 plot(f,fftshift(abs(DMY2)));
 title('2.3.c Channel 2 Demodulated (y2)');
-soundsc(real(DemodCh2(1:8:end)),8000);
+%soundsc(real(FilteredCh2(1:8:end)),8000);
 
 % soundsc(real(channel1(1:8:end)),8000);
 % soundsc(real(channel2(1:8:end)),8000); % 7 NATIONS
