@@ -12,17 +12,7 @@
                     "wmax":1000000,
                     "winc":100
                 },
-                "Part2":
-                {
-                    "Infinity": 1000,
-                    "tmin":-4,
-                    "tmax":4,
-                    "tinc":0.1,
-                    "ymax":20,
-                    "ymin":-2,
-                    "FundamentalPeriod":5,
-                    "Omega0":"2*pi"
-                }
+                "Part2":{}
             }
         }
     ],

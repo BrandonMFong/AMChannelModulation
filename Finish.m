@@ -1,6 +1,4 @@
-if exist('Outputs', 'dir')
-    mkdir('Outputs')
-end 
+% Creates output files depending on the config file 
 savevar = jsondecode(fileread('config.json'));
 for i = 1:size(savevar.Save,1)
     if savevar.Save(i).Type == "WaveFile"
