@@ -3,7 +3,7 @@ savevar = jsondecode(fileread('config.json'));
 for i = 1:size(savevar.Save,1)
     if savevar.Save(i).Type == "WaveFile"
         eval(['val = ',savevar.Save(i).MatlabVariable,';']);
-        n = str2num(['uint8(',savevar.Save(i).SamplingFrequency,')']);
+        n = str2num(savevar.Save(i).SamplingFrequency);
         audiowrite(strcat('Outputs\',savevar.Save(i).Filename),val,n);
     elseif savevar.Save(i).Type == "Constant"
         save(savevar.Save(i).Path,savevar.Save(i).VariableName,'-ascii')
