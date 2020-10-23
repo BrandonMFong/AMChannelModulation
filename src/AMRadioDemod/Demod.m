@@ -2,11 +2,11 @@
 % 2.3
 WnCh1 = 0.5;
 Ch1Filter=fir1(40,WnCh1); % use this to filter the first channel 
-figure;freqz(Ch1Filter)
+% figure;freqz(Ch1Filter)
 title('Filter for Ch1');
 WnCh2 = 0.5;
 Ch2Filter=fir1(40,WnCh2,'high'); % use this to filter the first channel 
-figure;freqz(Ch2Filter)
+% figure;freqz(Ch2Filter)
 title('Filter for Ch2');
 
 load proj2_wave2 
@@ -50,14 +50,14 @@ figure
 DemodFilter=fir1(40,0.2);
 % c
 DemodCh1 = cos(2*pi*0.2*(1:length(channel1))).*channel1; % Demodulate with cos()
-FilteredCh2 = filter(DemodFilter,1,DemodCh1); % Put channel through low pass filter 
-DMY1 = fft(FilteredCh2)./2;
+FilteredCh1 = filter(DemodFilter,1,DemodCh1); % Put channel through low pass filter 
+DMY1 = fft(FilteredCh1)./2;
 n = (length(DMY1)-1)/2;
 f = (-n:n)/n/2;
 subplot(1,2,1);
 plot(f,fftshift(abs(DMY1)));
 title('2.3.c Channel 1 Demodulated (y1)');
-soundsc(real(FilteredCh2(1:8:end)),8000);
+% soundsc(real(FilteredCh2(1:8:end)),8000);
 
 DemodCh2 = cos(2*pi*0.4*(1:length(channel2))).*channel2; % Demodulate with cos()
 FilteredCh2 = filter(DemodFilter,1,DemodCh2); % Put channel through low pass filter 
@@ -69,5 +69,4 @@ plot(f,fftshift(abs(DMY2)));
 title('2.3.c Channel 2 Demodulated (y2)');
 %soundsc(real(FilteredCh2(1:8:end)),8000);
 
-% soundsc(real(channel1(1:8:end)),8000);
-% soundsc(real(channel2(1:8:end)),8000); % 7 NATIONS
+% audiowrite('test.wav',real(FilteredCh2(1:8:end)),8000);
