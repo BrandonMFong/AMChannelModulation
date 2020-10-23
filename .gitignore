@@ -4,3 +4,4 @@ debug.log
 *.net
 *.raw
 *.asv
+\Outputs\*

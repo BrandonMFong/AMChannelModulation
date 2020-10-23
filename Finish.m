@@ -1,4 +1,4 @@
-if ~exist('Outputs', 'dir')
+if exist('Outputs', 'dir')
     mkdir('Outputs')
 end 
 savevar = jsondecode(fileread('config.json'));
