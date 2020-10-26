@@ -5,4 +5,12 @@ H0 = abs(H);
 theta0 = angle(H);
 subplot(211), semilogx(w,20*log10(H0))
 subplot(212), semilogx(w,theta0)
+title('1')
 
+figure
+HMag = ButterMag(w);
+H0Mag = abs(HMag);
+theta0Mag = angle(HMag);
+subplot(211), semilogx(w,20*log10(H0Mag))
+subplot(212), semilogx(w,theta0Mag)
+title('2')

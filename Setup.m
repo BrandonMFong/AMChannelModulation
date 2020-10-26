@@ -7,7 +7,9 @@ try
     const = var.Constants.Constant;
 
     % make output dir
-    mkdir('Outputs')
+    if exist('Outputs','dir') == 1
+        mkdir('Outputs')
+    end
     
     % Adding paths for project
     [rows, columns] = size(var.Paths);
