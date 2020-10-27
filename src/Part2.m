@@ -1,4 +1,0 @@
-
-Part2PreFunctions
-
-Demod
